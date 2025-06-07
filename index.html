@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Solutions for Small Businesses</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            /* Deep Ocean Theme */
+            --primary-color: #1A5F7A;     /* Deep teal */
+            --secondary-color: #159895;   /* Slightly lighter teal */
+            --accent-color: #57C5B6;      /* Bright aqua */
+            --background-color: #F8F9FA;  /* Light gray-white */
+            --text-color: #2C3333;        /* Dark slate */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .bg-primary {
+            background-color: var(--primary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color);
+        }
+
+        .service-card {
+            background-color: white;
+            border: 2px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(22, 94, 122, 0.2);
+        }
+
+        .more-info {
+            color: var(--secondary-color);
+            cursor: pointer;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .more-info:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .details-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 95, 122, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .details-content {
+            background: white;
+            border-left: 10px solid var(--primary-color);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            max-height: 80%;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(26, 95, 122, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4 text-primary">Cybersecurity Solutions for Small Businesses</h1>
+            <p class="text-xl text-gray-600">Protect Your Digital Assets Without Breaking the Bank</p>
+        </header>
+
+        <section class="bg-white shadow-lg rounded-lg p-8 mb-8">
+            <h2 class="text-2xl font-semibold mb-6 text-primary">Our Services</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="service-card p-6 rounded-lg" data-service="security-assessment">
+                    <h3 class="text-xl font-bold mb-3 flex items-center text-primary">
+                        <span class="mr-3">🛡️</span> Security Assessment
+                    </h3>
+                    <p class="text-gray-700 mb-4">Comprehensive review of your digital security</p>
+                    <p class="more-info">Click for more details</p>
+                    <a href="mailto:your-email@example.com?subject=Request%20for%20Security%20Assessment&body=Hello,%0A%0AI'm interested in your Security Assessment service.%0A%0ACould you provide more details about the comprehensive security review for my business?%0A%0AThank you," class="text-primary font-bold hover:text-secondary-color">$299</a>
+                </div>
+
+                <div class="service-card p-6 rounded-lg" data-service="employee-training">
+                    <h3 class="text-xl font-bold mb-3 flex items-center text-primary">
+                        <span class="mr-3">🎓</span> Employee Security Training
+                    </h3>
+                    <p class="text-gray-700 mb-4">Custom cybersecurity awareness workshop</p>
+                    <p class="more-info">Click for more details</p>
+                    <a href="mailto:your-email@example.com?subject=Request%20for%20Employee%20Security%20Training&body=Hello,%0A%0AI'm interested in your Employee Security Training service.%0A%0ACould you provide more information about the cybersecurity awareness workshop for my team?%0A%0AThank you," class="text-primary font-bold hover:text-secondary-color">$249</a>
+                </div>
+
+                <div class="service-card p-6 rounded-lg" data-service="security-setup">
+                    <h3 class="text-xl font-bold mb-3 flex items-center text-primary">
+                        <span class="mr-3">🔒</span> Basic Security Setup
+                    </h3>
+                    <p class="text-gray-700 mb-4">Implement essential security measures</p>
+                    <p class="more-info">Click for more details</p>
+                    <a href="mailto:your-email@example.com?subject=Request%20for%20Basic%20Security%20Setup&body=Hello,%0A%0AI'm interested in your Basic Security Setup service.%0A%0ACould you explain more about the essential security measures you can implement for my business?%0A%0AThank you," class="text-primary font-bold hover:text-secondary-color">$499</a>
+                </div>
+
+                <div class="service-card p-6 rounded-lg" data-service="incident-response">
+                    <h3 class="text-xl font-bold mb-3 flex items-center text-primary">
+                        <span class="mr-3">🚨</span> Incident Response Retainer
+                    </h3>
+                    <p class="text-gray-700 mb-4">Priority support for security incidents</p>
+                    <p class="more-info">Click for more details</p>
+                    <a href="mailto:your-email@example.com?subject=Request%20for%20Incident%20Response%20Retainer&body=Hello,%0A%0AI'm interested in your Incident Response Retainer service.%0A%0ACould you provide more details about the priority support for security incidents?%0A%0AThank you," class="text-primary font-bold hover:text-secondary-color">$149/month</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal for Service Details (same as previous version) -->
+        <div id="details-modal" class="details-modal">
+            <div class="details-content bg-white p-8 rounded-lg max-w-2xl">
+                <h2 id="modal-title" class="text-2xl font-bold mb-4 text-primary"></h2>
+                <p id="modal-description" class="mb-4"></p>
+                <p id="modal-benefits" class="mb-4"></p>
+                <button id="close-modal" class="cta-button text-white px-4 py-2 rounded hover:bg-opacity-90">
+                    Close
+                </button>
+            </div>
+        </div>
+
+        <section class="text-center mt-8">
+            <h2 class="text-2xl font-semibold mb-6 text-primary">Have Questions?</h2>
+            <a href="mailto:your-email@example.com?subject=Cybersecurity%20Consultation%20Request&body=Hello,%0A%0AI'd like to discuss my business's cybersecurity needs.%0A%0ACould we schedule a consultation?" class="cta-button text-white px-6 py-3 rounded-full hover:bg-opacity-90 inline-block">
+                Schedule a Free Consultation
+            </a>
+            <p class="text-sm text-gray-500 mt-4">Initial consultation is free. No obligations, just straightforward advice.</p>
+        </section>
+
+        <footer class="mt-8 text-center text-gray-500">
+            <p>&copy; 2025 Your Cybersecurity Business. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript remains the same as in the previous version -->
+    <script>
+        // (Previous JavaScript code remains unchanged)
+        document.addEventListener('DOMContentLoaded', () => {
+            const serviceDetails = {
+                'security-assessment': {
+                    title: 'Comprehensive Security Assessment',
+                    description: 'A deep-dive analysis of your company\'s digital security infrastructure. We don\'t just point out vulnerabilities - we provide a roadmap to fortify your defenses.',
+                    benefits: 'Key Benefits:\n- Identify hidden security gaps\n- Prioritize critical vulnerabilities\n- Custom recommendations tailored to your business\n- Compliance check with industry standards\n- Detailed report with actionable insights'
+                },
+                'employee-training': {
+                    title: 'Cybersecurity Awareness Training',
+                    description: 'Transform your employees from potential security risks to your first line of defense. Our interactive workshop turns complex security concepts into practical, memorable lessons.',
+                    benefits: 'Key Benefits:\n- Reduce human error in cybersecurity\n- Teach real-world threat recognition\n- Simulate phishing and social engineering scenarios\n- Build a security-conscious company culture\n- Customized to your industry and team'
+                },
+                'security-setup': {
+                    title: 'Essential Security Infrastructure Setup',
+                    description: 'We implement a robust security foundation that protects your business from common and advanced cyber threats. Our setup goes beyond basic protection.',
+                    benefits: 'Key Benefits:\n- Configure enterprise-grade firewalls\n- Implement advanced password management\n- Set up multi-factor authentication\n- Create secure network segmentation\n- Install and configure endpoint protection'
+                },
+                'incident-response': {
+                    title: 'Rapid Incident Response Retainer',
+                    description: 'When seconds count, have a dedicated cybersecurity team on standby. We provide immediate, expert intervention to contain and mitigate security breaches.',
+                    benefits: 'Key Benefits:\n- 24/7 emergency support\n- Rapid breach containment\n- Forensic investigation\n- Damage mitigation strategy\n- Regulatory compliance assistance\n- Post-incident reporting and recommendations'
+                }
+            };
+
+            const modal = document.getElementById('details-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalBenefits = document.getElementById('modal-benefits');
+            const closeModal = document.getElementById('close-modal');
+            const moreInfoButtons = document.querySelectorAll('.more-info');
+
+            moreInfoButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const serviceCard = e.target.closest('.service-card');
+                    const serviceType = serviceCard.dataset.service;
+                    const details = serviceDetails[serviceType];
+
+                    modalTitle.textContent = details.title;
+                    modalDescription.textContent = details.description;
+                    modalBenefits.textContent = details.benefits;
+
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            // Close modal if clicked outside
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
